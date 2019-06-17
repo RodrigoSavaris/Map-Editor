@@ -88,7 +88,6 @@ public class Game {
             for (int x = 0; x < grid.getWidth() ; x++){
 
 
-                //byte[] buffer = String.valueOf(grid.getAllPaintedStatusCurrentPosition(x,y)).getBytes();
 
                 try{
                     writer.write("" + grid.getCell(x,y).getPaintStatus());

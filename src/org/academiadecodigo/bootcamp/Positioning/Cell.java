@@ -38,10 +38,22 @@ public class Cell {
                 break;
 
             case 1:
-                thisRecangle.setColor(currentColor);
+                thisRecangle.setColor(Color.RED);
                 thisRecangle.fill();
                 isPainted = true;
                 paintStatus = 1;
+                break;
+            case 2:
+                thisRecangle.setColor(Color.BLACK);
+                thisRecangle.fill();
+                isPainted = true;
+                paintStatus = 2;
+                break;
+            case 3:
+                thisRecangle.setColor(Color.GREEN);
+                thisRecangle.fill();
+                isPainted = true;
+                paintStatus = 3;
                 break;
         }
 
@@ -54,7 +66,13 @@ public class Cell {
     public void paint(){
         thisRecangle.setColor(currentColor);
         thisRecangle.fill();
-        paintStatus = 1;
+        if ( currentColor == Color.RED) {
+            paintStatus = 1;
+        } else if ( currentColor == Color.BLACK){
+            paintStatus = 2;
+        } else if ( currentColor == Color.GREEN){
+            paintStatus = 3;
+        }
         isPainted = true;
     }
 
