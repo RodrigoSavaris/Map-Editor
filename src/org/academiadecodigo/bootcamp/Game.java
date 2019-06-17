@@ -112,15 +112,6 @@ public class Game {
             e.getMessage();
         }
 
-       /*try{
-           reader = new FileInputStream("/Users/codecadet/workspace/PaintProject/savedGrid/grid");
-           reader.read();
-           System.out.println(reader);
-       } catch (FileNotFoundException e){
-           e.getMessage();
-       } catch (IOException a){
-           a.getMessage();
-       }*/
 
        String line = "";
 
@@ -140,7 +131,7 @@ public class Game {
 
 
                 grid.initializeAllCellsSaved(x,y,Character.getNumericValue( line.charAt(fileCounter)));
-                System.out.println("the file counter number "+fileCounter+" is equal to "+line.charAt(fileCounter));
+                //System.out.println("the file counter number "+fileCounter+" is equal to "+line.charAt(fileCounter));
                 fileCounter++;
 
 
@@ -148,7 +139,7 @@ public class Game {
 
             }
         }
-
+        System.out.println("Successfully loaded!");
         try {
 
             reader.close();
