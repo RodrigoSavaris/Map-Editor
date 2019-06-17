@@ -1,5 +1,7 @@
 package org.academiadecodigo.bootcamp.Positioning;
 
+import org.academiadecodigo.simplegraphics.graphics.Color;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

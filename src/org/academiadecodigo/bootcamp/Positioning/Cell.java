@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.Positioning;
 
+import org.academiadecodigo.bootcamp.Colors.Colors;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
@@ -22,6 +23,7 @@ public class Cell {
         this.row = startingY;
         this.col = startingX;
         paintStatus = 0;
+        currentColor = Color.RED;
 
     }
 
@@ -31,15 +33,13 @@ public class Cell {
             case 0:
                 thisRecangle.setColor(Color.BLACK);
                 thisRecangle.draw();
-                this.currentColor = Color.BLACK;
                 isPainted = false;
                 paintStatus = 0;
                 break;
 
             case 1:
-                thisRecangle.setColor(Color.RED);
+                thisRecangle.setColor(currentColor);
                 thisRecangle.fill();
-                this.currentColor = Color.RED;
                 isPainted = true;
                 paintStatus = 1;
                 break;
@@ -52,7 +52,7 @@ public class Cell {
     }
 
     public void paint(){
-        thisRecangle.setColor(Color.RED);
+        thisRecangle.setColor(currentColor);
         thisRecangle.fill();
         paintStatus = 1;
         isPainted = true;
@@ -68,4 +68,11 @@ public class Cell {
     public int getPaintStatus(){
         return paintStatus;
     }
+
+    public void setCurrentColor(Color whichColor){
+      currentColor = whichColor;
+    }
+
+
+
 }

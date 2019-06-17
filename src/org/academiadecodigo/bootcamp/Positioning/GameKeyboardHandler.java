@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.Positioning;
 
+import org.academiadecodigo.bootcamp.Colors.Colors;
 import org.academiadecodigo.bootcamp.Game;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -41,6 +42,18 @@ public class GameKeyboardHandler implements KeyboardHandler {
             case KeyboardEvent.KEY_L:
                 game.loadImage();
                 break;
+            case KeyboardEvent.KEY_1:
+                game.changeColor(1);
+                break;
+            case KeyboardEvent.KEY_2:
+                game.changeColor(2);
+                break;
+            case KeyboardEvent.KEY_3:
+                game.changeColor(3);
+                break;
+            case KeyboardEvent.KEY_C:
+                game.clearGrid();
+
         }
 
     }

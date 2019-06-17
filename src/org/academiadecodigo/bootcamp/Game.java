@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp;
 
+import org.academiadecodigo.bootcamp.Colors.Colors;
 import org.academiadecodigo.bootcamp.Positioning.*;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -41,6 +42,10 @@ public class Game {
         addEvent(KeyboardEvent.KEY_SPACE, KeyboardEventType.KEY_PRESSED, keyboard);
         addEvent(KeyboardEvent.KEY_S,KeyboardEventType.KEY_PRESSED,keyboard);
         addEvent(KeyboardEvent.KEY_L,KeyboardEventType.KEY_PRESSED,keyboard);
+        addEvent(KeyboardEvent.KEY_1,KeyboardEventType.KEY_PRESSED,keyboard);
+        addEvent(KeyboardEvent.KEY_2,KeyboardEventType.KEY_PRESSED,keyboard);
+        addEvent(KeyboardEvent.KEY_3,KeyboardEventType.KEY_PRESSED,keyboard);
+        addEvent(KeyboardEvent.KEY_C,KeyboardEventType.KEY_PRESSED,keyboard);
 
 
     }
@@ -112,7 +117,6 @@ public class Game {
             e.getMessage();
         }
 
-
        String line = "";
 
        try {
@@ -121,21 +125,16 @@ public class Game {
            e.getMessage();
        }
 
-        System.out.println(line.toCharArray());
+        //System.out.println(line.toCharArray());
 
        int fileCounter= 0;
 
         for (int y = 0; y < grid.getHeight(); y++){
             for (int x = 0; x < grid.getWidth() ; x++){
 
-
-
                 grid.initializeAllCellsSaved(x,y,Character.getNumericValue( line.charAt(fileCounter)));
                 //System.out.println("the file counter number "+fileCounter+" is equal to "+line.charAt(fileCounter));
                 fileCounter++;
-
-
-
 
             }
         }
@@ -147,7 +146,32 @@ public class Game {
             aa.getMessage();
         }
 
+    }
+
+
+    public void changeColor(int colorIndex){
+
+        cursor.setCurrentColor(colorIndex);
+
+        for (int y = 0; y < grid.getHeight(); y++){
+            for (int x = 0; x < grid.getWidth() ; x++){
+
+                grid.getCell(x,y).setCurrentColor(cursor.getCursorColor());
+
+            }
+        }
+    }
+
+    public void clearGrid(){
+        for (int y = 0; y < grid.getHeight(); y++){
+            for (int x = 0; x < grid.getWidth() ; x++){
+
+            grid.getCell(x,y).unpaint();
+
+            }
+        }
 
     }
+
 
 }

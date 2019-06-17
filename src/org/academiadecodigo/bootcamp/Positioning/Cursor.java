@@ -16,6 +16,8 @@ public class Cursor {
     private int colBoundary;
     private int rowBoundary;
 
+    private Color cursorColor;
+
     public Cursor(int startingX, int startingY, int recwidth, int recheight, int width, int height){
 
 
@@ -27,6 +29,7 @@ public class Cursor {
         cellSize = recwidth;
         colBoundary = width;
         rowBoundary = height;
+        cursorColor = Color.RED;
 
 
     }
@@ -86,6 +89,24 @@ public class Cursor {
         }
     }
 
+    public void setCurrentColor(int colorIndex){
+        switch (colorIndex){
+            case 1:
+                this.cursorColor=Color.RED;
+                break;
+            case 2:
+                this.cursorColor=Color.BLACK;
+                break;
+            case 3:
+                this.cursorColor=Color.GREEN;
+                break;
+        }
+
+    }
+
+    public Color getCursorColor(){
+        return cursorColor;
+    }
 
 
 
