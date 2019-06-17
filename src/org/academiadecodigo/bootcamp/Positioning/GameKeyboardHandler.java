@@ -35,6 +35,12 @@ public class GameKeyboardHandler implements KeyboardHandler {
             case KeyboardEvent.KEY_SPACE:
                 game.paint();
                 break;
+            case KeyboardEvent.KEY_S:
+                game.saveImage();
+                break;
+            case KeyboardEvent.KEY_L:
+                game.loadImage();
+                break;
         }
 
     }

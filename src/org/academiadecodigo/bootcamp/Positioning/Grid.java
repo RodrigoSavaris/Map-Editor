@@ -1,5 +1,9 @@
 package org.academiadecodigo.bootcamp.Positioning;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 public class Grid {
     private int height;
     private int width;
@@ -7,12 +11,16 @@ public class Grid {
     private int cellSize;
     private Cell[][] gridCells;
 
+
     public Grid(int height, int width, int padding, int cellSize){
         this.height = height;
         this.width = width;
         this.padding = padding;
         this.cellSize = cellSize;
         gridCells = new Cell[width][height];
+
+
+
     }
 
     public int getHeight(){
@@ -32,16 +40,22 @@ public class Grid {
     }
 
     public void initializeGrid(){
-        int counter = 0;
 
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width ; x++){
 
                 gridCells[x][y] = new Cell(x*cellSize + padding, y*cellSize + padding, cellSize,cellSize);
 
+                //System.out.println(allPaintedStatus[x][y] );
             }
         }
     }
+
+
+    public void initializeAllCellsSaved(int x, int y, int whichType){
+        gridCells[x][y].paintCell(whichType);
+    }
+
 
     public void paint(int whichCol, int whichRow){
 
@@ -55,4 +69,13 @@ public class Grid {
         }
 
     }
+
+    /*public Cell getGridCells(int x, int y){
+        return gridCells[x][y];
+    }*/
+
+    public Cell getCell(int x, int y){
+        return gridCells[x][y];
+    }
+
 }
