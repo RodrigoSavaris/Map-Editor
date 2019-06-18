@@ -80,4 +80,14 @@ public class Grid {
         return gridCells[x][y];
     }
 
+    public void fillGrid(){
+        for (int y = 0; y < getHeight(); y++){
+            for (int x = 0; x < getWidth() ; x++){
+
+                getCell(x,y).paint();
+
+            }
+        }
+    }
+
 }

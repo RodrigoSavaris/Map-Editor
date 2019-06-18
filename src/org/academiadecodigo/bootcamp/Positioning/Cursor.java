@@ -100,6 +100,10 @@ public class Cursor {
             case 3:
                 this.cursorColor=Color.GREEN;
                 break;
+            case 4:
+                this.cursorColor=Color.YELLOW;
+                break;
+
         }
 
     }

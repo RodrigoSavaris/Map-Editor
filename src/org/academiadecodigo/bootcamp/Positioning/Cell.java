@@ -1,6 +1,6 @@
 package org.academiadecodigo.bootcamp.Positioning;
 
-import org.academiadecodigo.bootcamp.Colors.Colors;
+//import org.academiadecodigo.bootcamp.Colors.Colors;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
@@ -18,10 +18,12 @@ public class Cell {
         thisRecangle = new Rectangle(startingX, startingY, length, height);
         thisRecangle.setColor(Color.BLACK);
         thisRecangle.draw();
+
         this.currentColor = Color.BLACK;
         isPainted = false;
         this.row = startingY;
         this.col = startingX;
+
         paintStatus = 0;
         currentColor = Color.RED;
 
@@ -30,6 +32,7 @@ public class Cell {
     public void paintCell(int whichType){
 
         switch (whichType) {
+
             case 0:
                 thisRecangle.setColor(Color.BLACK);
                 thisRecangle.draw();
@@ -43,18 +46,29 @@ public class Cell {
                 isPainted = true;
                 paintStatus = 1;
                 break;
+
             case 2:
                 thisRecangle.setColor(Color.BLACK);
                 thisRecangle.fill();
                 isPainted = true;
                 paintStatus = 2;
                 break;
+
             case 3:
                 thisRecangle.setColor(Color.GREEN);
                 thisRecangle.fill();
                 isPainted = true;
                 paintStatus = 3;
+
                 break;
+
+            case 4:
+                thisRecangle.setColor(Color.YELLOW);
+                thisRecangle.fill();
+                isPainted = true;
+                paintStatus = 4;
+                break;
+
         }
 
     }
@@ -64,19 +78,34 @@ public class Cell {
     }
 
     public void paint(){
+
         thisRecangle.setColor(currentColor);
         thisRecangle.fill();
         if ( currentColor == Color.RED) {
             paintStatus = 1;
-        } else if ( currentColor == Color.BLACK){
-            paintStatus = 2;
-        } else if ( currentColor == Color.GREEN){
-            paintStatus = 3;
+            return;
         }
+
+        if ( currentColor == Color.BLACK) {
+            paintStatus = 2;
+            return;
+        }
+
+        if ( currentColor == Color.GREEN) {
+            paintStatus = 3;
+            return;
+        }
+
+        if ( currentColor == Color.YELLOW) {
+            paintStatus = 4;
+            return;
+        }
+
         isPainted = true;
     }
 
     public void unpaint(){
+
         thisRecangle.setColor(Color.BLACK);
         thisRecangle.draw();
         isPainted=false;

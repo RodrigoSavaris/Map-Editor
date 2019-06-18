@@ -1,6 +1,5 @@
 package org.academiadecodigo.bootcamp;
 
-import org.academiadecodigo.bootcamp.Colors.Colors;
 import org.academiadecodigo.bootcamp.Positioning.*;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -22,8 +21,7 @@ public class Game {
     private FileWriter writer = null;
     private BufferedWriter bWriter = null;
 
-
-
+    private int recStatus = 0;
 
 
     public void gameInit(int height, int width, int padding, int cellsize) {
@@ -45,7 +43,9 @@ public class Game {
         addEvent(KeyboardEvent.KEY_1,KeyboardEventType.KEY_PRESSED,keyboard);
         addEvent(KeyboardEvent.KEY_2,KeyboardEventType.KEY_PRESSED,keyboard);
         addEvent(KeyboardEvent.KEY_3,KeyboardEventType.KEY_PRESSED,keyboard);
+        addEvent(KeyboardEvent.KEY_4,KeyboardEventType.KEY_PRESSED,keyboard);
         addEvent(KeyboardEvent.KEY_C,KeyboardEventType.KEY_PRESSED,keyboard);
+        addEvent(KeyboardEvent.KEY_F,KeyboardEventType.KEY_PRESSED,keyboard);
 
 
     }
@@ -171,6 +171,12 @@ public class Game {
         }
 
     }
+
+    public void fillGrid(){
+        grid.fillGrid();
+    }
+
+
 
 
 }
