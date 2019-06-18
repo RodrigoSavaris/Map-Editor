@@ -60,7 +60,12 @@ public class GameKeyboardHandler implements KeyboardHandler {
             case KeyboardEvent.KEY_F:
                 game.fillGrid();
                 break;
-
+            case KeyboardEvent.KEY_R:
+                game.startRectangle();
+                break;
+            case KeyboardEvent.KEY_T:
+                game.startRectangle();
+                break;
 
         }
 
@@ -68,6 +73,18 @@ public class GameKeyboardHandler implements KeyboardHandler {
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
+
+        int whichKey = keyboardEvent.getKey();
+
+        switch (whichKey){
+
+            case KeyboardEvent.KEY_R:
+                game.drawTheRectangle();
+                break;
+            case KeyboardEvent.KEY_T:
+                game.fillTheRectangle();
+                break;
+        }
 
     }
 }

@@ -46,7 +46,10 @@ public class Game {
         addEvent(KeyboardEvent.KEY_4,KeyboardEventType.KEY_PRESSED,keyboard);
         addEvent(KeyboardEvent.KEY_C,KeyboardEventType.KEY_PRESSED,keyboard);
         addEvent(KeyboardEvent.KEY_F,KeyboardEventType.KEY_PRESSED,keyboard);
-
+        addEvent(KeyboardEvent.KEY_R,KeyboardEventType.KEY_PRESSED,keyboard);
+        addEvent(KeyboardEvent.KEY_R,KeyboardEventType.KEY_RELEASED,keyboard);
+        addEvent(KeyboardEvent.KEY_T,KeyboardEventType.KEY_PRESSED,keyboard);
+        addEvent(KeyboardEvent.KEY_T,KeyboardEventType.KEY_RELEASED,keyboard);
 
     }
 
@@ -176,7 +179,16 @@ public class Game {
         grid.fillGrid();
     }
 
+    public void startRectangle(){
+        grid.setRectangleStart(cursor.getCursorCol(),cursor.getCursorRow());
+    }
 
+    public void drawTheRectangle(){
+        grid.drawingRectangle(cursor.getCursorCol(),cursor.getCursorRow());
+    }
 
+    public void fillTheRectangle(){
+        grid.fillingRectangle(cursor.getCursorCol(),cursor.getCursorRow());
+    }
 
 }
