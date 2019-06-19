@@ -23,10 +23,12 @@ public class Grid {
         this.cellSize = cellSize;
         gridCells = new Cell[width][height];
 
-
-
     }
 
+    /**
+     * @param x
+     * @param y
+     */
     public void setRectangleStart(int x, int y){
         rectangleStartX = x;
         rectangleStartY = y;

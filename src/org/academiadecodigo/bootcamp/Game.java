@@ -78,7 +78,7 @@ public class Game {
     public void saveImage(){
 
         try {
-            writer = new FileWriter("/Users/codecadet/workspace/PaintProject/savedGrid/grid.txt");
+            writer = new FileWriter("./grid.txt");
             bWriter = new BufferedWriter(writer);
         } catch (FileNotFoundException e){
             e.getMessage();
@@ -113,7 +113,7 @@ public class Game {
     public void loadImage(){
 
         try {
-            reader = new FileReader("/Users/codecadet/workspace/PaintProject/savedGrid/grid.txt");
+            reader = new FileReader("./grid.txt");
             bReader = new BufferedReader(reader);
         } catch (FileNotFoundException e){
             e.getMessage();
